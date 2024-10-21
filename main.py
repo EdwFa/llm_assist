@@ -31,7 +31,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 if "selected_model" not in st.session_state:
-    st.session_state.selected_model = "LLaMA3-70b-8192"
+    st.session_state.selected_model = "llama-3.1-70b-versatile"
 
 # Define model details
 models = {
