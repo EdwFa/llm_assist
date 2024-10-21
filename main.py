@@ -69,7 +69,7 @@ if st.session_state.selected_model != model_option:
 #     step=256,
 #     help=f"Настройте максимальное количество токенов для ответа модели. Для выбранной модели: {max_tokens_range}"
 # )
-max_tokens = 8000
+# max_tokens = 8000
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     avatar = '🤖' if message["role"] == "assistant" else '👨‍💻'
@@ -99,7 +99,7 @@ if prompt := st.chat_input("Задавайте вопрос ..."):
                 }
                 for m in st.session_state.messages
             ],
-            max_tokens=max_tokens,
+            # max_tokens=max_tokens,
             temperature=0.1,
             stream=True
         )
