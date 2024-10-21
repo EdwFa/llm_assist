@@ -37,7 +37,7 @@ if "selected_model" not in st.session_state:
 models = {
     "gemma-7b": {"name": "Gemma-7b-it", "tokens": 8192, "developer": "Google"},
     "llama3-70b": {"name": "LLaMA3-70b-8192", "tokens": 8192, "developer": "Meta"},
-    "llama3.1-70b": {"name": "llama-3.1-70b-versatile", "tokens": 8000, "developer": "Meta"},
+    "llama3.1-70b": {"name": "llama-3.1-70b-versatile", "tokens": 7980, "developer": "Meta"},
     "llama3-8b": {"name": "LLaMA3-8b-8192", "tokens": 8192, "developer": "Meta"},
     "mixtral-8x7b": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768, "developer": "Mistral"},
 }
