@@ -84,3 +84,4 @@ tzdata==2024.1
 urllib3==2.2.2
 yandexcloud==0.300.0
 yarl==1.9.4
+pydantic>=2.7.4
