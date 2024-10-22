@@ -3,7 +3,7 @@ from typing import Generator
 from groq import Groq
 
 st.set_page_config(page_icon="💬", layout="wide",
-                   page_title="Ассистент-DataMed")
+                   page_title="Head and Neck surgery oncology assistent- DataMed.AI")
 
 hide_streamlit_style = """
 <style>
@@ -14,8 +14,11 @@ footer {visibility: hidden;}
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-spacer, col = st.columns([5, 1])
-with col:
+spacer, col1, col2 = st.columns([3,1,1])
+with col1:
+    st.image('head_neck.png')
+
+with col2:
     st.image('img.png')
 
 def icon(emoji: str):
@@ -24,7 +27,7 @@ def icon(emoji: str):
         unsafe_allow_html=True,
     )
 #icon("🏎️")
-st.subheader("Sechenov.DataMed - Quality assessor for LLM models", divider="rainbow", anchor=False)
+st.subheader("Head and Neck surgery oncology assistent - DataMed.AI", divider="rainbow", anchor=False)
 
 client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
