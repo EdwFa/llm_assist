@@ -14,6 +14,10 @@ footer {visibility: hidden;}
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+spacer, col = st.columns([5, 1])
+with col:
+    st.image('img.png')
+
 def icon(emoji: str):
     st.write(
         f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
@@ -31,13 +35,13 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 if "selected_model" not in st.session_state:
-    st.session_state.selected_model = "llama-3.1-70b-versatile"
+    st.session_state.selected_model = "LLaMA3-70b-8192"
 
 # Define model details
 models = {
     "gemma-7b": {"name": "Gemma-7b-it", "tokens": 8192, "developer": "Google"},
     "llama3-70b": {"name": "LLaMA3-70b-8192", "tokens": 8192, "developer": "Meta"},
-    "llama3.1-70b": {"name": "llama-3.1-70b-versatile", "tokens": 7980, "developer": "Meta"},
+    "llama3.1-70b": {"name": "llama-3.1-70b-versatile", "tokens": 8192, "developer": "Meta"},
     "llama3-8b": {"name": "LLaMA3-8b-8192", "tokens": 8192, "developer": "Meta"},
     "mixtral-8x7b": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768, "developer": "Mistral"},
 }
@@ -69,7 +73,7 @@ if st.session_state.selected_model != model_option:
 #     step=256,
 #     help=f"Настройте максимальное количество токенов для ответа модели. Для выбранной модели: {max_tokens_range}"
 # )
-# max_tokens = 8000
+max_tokens = 8192
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     avatar = '🤖' if message["role"] == "assistant" else '👨‍💻'
@@ -99,8 +103,7 @@ if prompt := st.chat_input("Задавайте вопрос ..."):
                 }
                 for m in st.session_state.messages
             ],
-            # max_tokens=max_tokens,
-            temperature=0.1,
+            max_tokens=max_tokens,
             stream=True
         )
 
