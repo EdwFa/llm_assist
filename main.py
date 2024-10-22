@@ -14,7 +14,7 @@ footer {visibility: hidden;}
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-spacer, col1, col, col2 = st.columns([5,1,2,1])
+spacer, col1, col, col2 = st.columns([5,1,4,1])
 with spacer:
     st.image('HeadNeckLogo.png')
 with col1:
